@@ -1,0 +1,249 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+
+    <style>
+        /* General styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f7fb;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        /* Navigation bar */
+        header {
+            background: #14213d;
+            color: white;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        header h2 {
+            color: #fca311;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        nav a:hover {
+            color: #fca311;
+        }
+
+        /* Home section */
+        .hero {
+            min-height: 400px;
+            padding: 90px 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #14213d, #355c9a);
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #fca311;
+            color: #14213d;
+            padding: 12px 25px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background: white;
+        }
+
+        /* Content sections */
+        section {
+            padding: 55px 8%;
+            text-align: center;
+        }
+
+        section h2 {
+            margin-bottom: 20px;
+            color: #14213d;
+        }
+
+        /* Service cards */
+        .services {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            width: 260px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px #00000012;
+        }
+
+        .card h3 {
+            color: #355c9a;
+            margin-bottom: 10px;
+        }
+
+        /* Contact section */
+        #contact {
+            background: #e7edf6;
+        }
+
+        input, textarea {
+            width: 100%;
+            max-width: 450px;
+            padding: 12px;
+            margin: 8px auto;
+            display: block;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            border: none;
+            cursor: pointer;
+        }
+
+        footer {
+            background: #14213d;
+            color: white;
+            text-align: center;
+            padding: 18px;
+        }
+
+        /* Mobile responsive design */
+        @media (max-width: 600px) {
+            header {
+                justify-content: center;
+                gap: 12px;
+            }
+
+            nav a {
+                margin: 0 7px;
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h2>MyWebsite</h2>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <h1>Welcome to My Website</h1>
+            <p>Creative ideas. Modern design. Better experiences.</p>
+            <a href="#services" class="btn">Explore Services</a>
+        </section>
+
+        <section id="about">
+            <h2>About Us</h2>
+            <p>
+                We create simple, beautiful, and user-friendly
+                websites to help people and businesses grow online.
+            </p>
+        </section>
+
+        <section id="services">
+            <h2>Our Services</h2>
+
+            <div class="services">
+                <div class="card">
+                    <h3>Web Design</h3>
+                    <p>Beautiful layouts for modern websites.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Development</h3>
+                    <p>Fast and responsive websites for all devices.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Support</h3>
+                    <p>Helpful support to keep your website running.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Have a question? Send us a message.</p>
+
+            <form id="contactForm">
+                <input type="text" placeholder="Your Name"
+                       aria-label="Your Name" required>
+
+                <input type="email" placeholder="Your Email"
+                       aria-label="Your Email" required>
+
+                <textarea placeholder="Your Message"
+                          aria-label="Your Message"
+                          rows="5" required></textarea>
+
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+
+            <p id="formMessage" role="status"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 MyWebsite. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById("contactForm")
+            .addEventListener("submit", function(event) {
+                event.preventDefault();
+
+                document.getElementById("formMessage").textContent =
+                    "Thank you! The demo form was submitted.";
+
+                this.reset();
+            });
+    </script>
+
+</body>
+</html>
